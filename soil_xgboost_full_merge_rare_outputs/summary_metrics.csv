@@ -1,0 +1,4 @@
+﻿,model,description,target,features,accuracy,balanced_accuracy,macro_f1,weighted_f1
+2,model_3_relief_tlu_gran_mp,"Soil = f(relief, TLU, GRAN, MP)",Soil_merged,"height_1, slope_1, aspect_sin, aspect_cos, profile_1, tangential_1, TPI_1, TRI_1, roughness_1, flow_1, twi_1, dist_stream_1, TLU, GRAN, MP",0.611764705882353,0.5861415664509818,0.5858052821759684,0.607234717725901
+1,model_2_relief_only,Soil = f(relief),Soil_merged,"height_1, slope_1, aspect_sin, aspect_cos, profile_1, tangential_1, TPI_1, TRI_1, roughness_1, flow_1, twi_1, dist_stream_1",0.4264705882352941,0.39378136661335933,0.381903883157961,0.40783395249629656
+0,model_1_relief_tlu,"Soil = f(relief, TLU)",Soil_merged,"height_1, slope_1, aspect_sin, aspect_cos, profile_1, tangential_1, TPI_1, TRI_1, roughness_1, flow_1, twi_1, dist_stream_1, TLU",0.4264705882352941,0.3918169712999333,0.377062050774966,0.4052763568536111

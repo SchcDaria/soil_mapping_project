@@ -1,0 +1,91 @@
+{
+  "model": {
+    "name": "model_2_relief_only",
+    "description": "Soil = f(relief)",
+    "numeric_features": [
+      "height_1",
+      "slope_1",
+      "aspect_sin",
+      "aspect_cos",
+      "profile_1",
+      "tangential_1",
+      "TPI_1",
+      "TRI_1",
+      "roughness_1",
+      "flow_1",
+      "twi_1",
+      "dist_stream_1",
+      "osm_water_1",
+      "osm_wetland_1",
+      "osm_waterbody_1",
+      "osm_road_1",
+      "tpi_3x3_1",
+      "tpi_7x7_1",
+      "tpi_15x15_1",
+      "rough_3x3_1",
+      "rough_7x7_1",
+      "rough_15x15_1",
+      "relief_std_3x3_1",
+      "relief_std_7x7_1",
+      "relief_std_15x15_1"
+    ],
+    "categorical_features": []
+  },
+  "target": "Soil",
+  "metrics": {
+    "accuracy": 0.7029411764705882,
+    "balanced_accuracy": 0.6696133004338295,
+    "macro_f1": 0.6492815337961801,
+    "weighted_f1": 0.7054042811212488
+  },
+  "optimization_metric": "macro_f1",
+  "best_validation_score": 0.7286784136421818,
+  "best_params": {
+    "max_depth": 8,
+    "n_estimators": 150,
+    "min_samples_split": 12,
+    "min_samples_leaf": 2,
+    "max_features": "sqrt",
+    "bootstrap": true,
+    "criterion": "gini"
+  },
+  "use_smote": true,
+  "resampling": {
+    "sampler": "SMOTE",
+    "sampling_strategy": {
+      "2": 10000,
+      "4": 10000,
+      "1": 10000,
+      "3": 10000,
+      "5": 10000,
+      "0": 10000,
+      "6": 10000,
+      "7": 10000
+    },
+    "requested_k_neighbors": 5,
+    "effective_k_neighbors": 5,
+    "categorical_features": [],
+    "categorical_indices": [],
+    "smote_target_count": 10000
+  },
+  "train_class_counts_before": {
+    "п1д": 85,
+    "п1д огл": 146,
+    "п2д": 253,
+    "п2д огл": 124,
+    "п3д": 218,
+    "п3д огл": 121,
+    "пд пов огл": 61,
+    "т1п пов огл": 10
+  },
+  "train_class_counts_after": {
+    "п1д": 10000,
+    "п1д огл": 10000,
+    "п2д": 10000,
+    "п2д огл": 10000,
+    "п3д": 10000,
+    "п3д огл": 10000,
+    "пд пов огл": 10000,
+    "т1п пов огл": 10000
+  }
+}
