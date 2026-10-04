@@ -1,0 +1,265 @@
+{
+  "rf8": {
+    "script": "train_random_forest_optuna.py",
+    "input": "data/training/soil_full_osm_multiscale.csv",
+    "options": {
+      "test_size": 0.25,
+      "random_state": 42,
+      "n_trials": 30,
+      "optimization_metric": "macro_f1",
+      "use_smote": false,
+      "valid_size": 0.2,
+      "save_pickle": true
+    },
+    "reference_results": "soil_random_forest_8classes_optuna_outputs",
+    "historical_results_available": true
+  },
+  "rf8_smote": {
+    "script": "train_random_forest_optuna.py",
+    "input": "data/training/soil_full_osm_multiscale.csv",
+    "options": {
+      "test_size": 0.25,
+      "random_state": 42,
+      "n_trials": 8,
+      "optimization_metric": "macro_f1",
+      "use_smote": true,
+      "smote_target_count": 10000,
+      "rf_n_estimators_min": 50,
+      "rf_n_estimators_max": 200,
+      "rf_n_estimators_step": 50,
+      "rf_max_depth_max": 18,
+      "valid_size": 0.2,
+      "save_pickle": true
+    },
+    "reference_results": "soil_random_forest_8classes_smote10000_optuna_outputs",
+    "historical_results_available": true
+  },
+  "xgb_extended": {
+    "script": "train_xgboost_soil.py",
+    "input": "data/training/soil_relief_tlu_extended.csv",
+    "options": {
+      "test_size": 0.25,
+      "random_state": 42,
+      "n_estimators": 500,
+      "learning_rate": 0.05,
+      "max_depth": 4
+    },
+    "reference_results": "soil_xgboost_extended_outputs",
+    "historical_results_available": true
+  },
+  "xgb_full_merge_rare": {
+    "script": "train_xgboost_merge_rare.py",
+    "input": "data/training/soil_relief_extended_full.csv",
+    "options": {
+      "test_size": 0.25,
+      "random_state": 42,
+      "n_estimators": 500,
+      "learning_rate": 0.05,
+      "max_depth": 4,
+      "min_class_count": 30,
+      "distance_metric": "cosine"
+    },
+    "reference_results": "soil_xgboost_full_merge_rare_outputs",
+    "historical_results_available": true
+  },
+  "xgb_full_merge_rare_smote": {
+    "script": "train_xgboost_merge_rare_smote.py",
+    "input": "data/training/soil_relief_extended_full.csv",
+    "options": {
+      "test_size": 0.25,
+      "random_state": 42,
+      "n_estimators": 500,
+      "learning_rate": 0.05,
+      "max_depth": 4,
+      "min_class_count": 30,
+      "distance_metric": "cosine",
+      "sampling_strategy": "not majority",
+      "smote_k_neighbors": 5
+    },
+    "reference_results": "soil_xgboost_full_merge_rare_smote_outputs",
+    "historical_results_available": true
+  },
+  "xgb_full": {
+    "script": "train_xgboost_soil.py",
+    "input": "data/training/soil_relief_extended_full.csv",
+    "options": {
+      "test_size": 0.25,
+      "random_state": 42,
+      "n_estimators": 500,
+      "learning_rate": 0.05,
+      "max_depth": 4
+    },
+    "reference_results": "soil_xgboost_full_outputs",
+    "historical_results_available": true
+  },
+  "xgb_full_smote": {
+    "script": "train_xgboost_smote.py",
+    "input": "data/training/soil_relief_extended_full.csv",
+    "options": {
+      "test_size": 0.25,
+      "random_state": 42,
+      "n_estimators": 500,
+      "learning_rate": 0.05,
+      "max_depth": 4,
+      "sampling_strategy": "not majority",
+      "smote_k_neighbors": 5
+    },
+    "reference_results": "soil_xgboost_full_smote_outputs",
+    "historical_results_available": true
+  },
+  "xgb_multiscale_8classes_optuna": {
+    "script": "train_xgboost_merge_rare_optuna.py",
+    "input": "data/training/soil_full_osm_multiscale.csv",
+    "options": {
+      "test_size": 0.25,
+      "random_state": 42,
+      "n_trials": 50,
+      "min_class_count": 30,
+      "distance_metric": "cosine",
+      "no_merge_rare": true,
+      "optimization_metric": "macro_f1",
+      "use_smote": false,
+      "valid_size": 0.2,
+      "save_pickle": true
+    },
+    "reference_results": "soil_xgboost_multiscale_8classes_optuna_outputs",
+    "historical_results_available": true
+  },
+  "xgb_multiscale_8classes_smote10000_optuna": {
+    "script": "train_xgboost_merge_rare_optuna.py",
+    "input": "data/training/soil_full_osm_multiscale.csv",
+    "options": {
+      "test_size": 0.25,
+      "random_state": 42,
+      "n_trials": 50,
+      "min_class_count": 30,
+      "distance_metric": "cosine",
+      "no_merge_rare": true,
+      "optimization_metric": "macro_f1",
+      "use_smote": true,
+      "smote_target_count": 10000,
+      "valid_size": 0.2,
+      "save_pickle": true
+    },
+    "reference_results": "soil_xgboost_multiscale_8classes_smote10000_optuna_outputs",
+    "historical_results_available": true
+  },
+  "xgb_multiscale_merge_optuna": {
+    "script": "train_xgboost_merge_rare_optuna.py",
+    "input": "data/training/soil_full_osm_multiscale.csv",
+    "options": {
+      "test_size": 0.25,
+      "random_state": 42,
+      "n_trials": 50,
+      "min_class_count": 30,
+      "distance_metric": "cosine",
+      "optimization_metric": "macro_f1",
+      "use_smote": false,
+      "valid_size": 0.2,
+      "save_pickle": true
+    },
+    "reference_results": "soil_xgboost_multiscale_merge_optuna_outputs",
+    "historical_results_available": true
+  },
+  "xgb_osm_merge_optuna": {
+    "script": "train_xgboost_merge_rare_optuna.py",
+    "input": "data/training/soil_relief_extended_full_osm_water.csv",
+    "options": {
+      "test_size": 0.25,
+      "random_state": 42,
+      "n_trials": 50,
+      "min_class_count": 30,
+      "distance_metric": "cosine",
+      "optimization_metric": "macro_f1",
+      "use_smote": false,
+      "valid_size": 0.2,
+      "save_pickle": true
+    },
+    "reference_results": "soil_xgboost_osm_merge_optuna_outputs",
+    "historical_results_available": true
+  },
+  "xgb_osm_merge_smote10000_optuna": {
+    "script": "train_xgboost_merge_rare_optuna.py",
+    "input": "data/training/soil_relief_extended_full_osm_water.csv",
+    "options": {
+      "test_size": 0.25,
+      "random_state": 42,
+      "n_trials": 50,
+      "min_class_count": 30,
+      "distance_metric": "cosine",
+      "optimization_metric": "macro_f1",
+      "use_smote": true,
+      "smote_target_count": 10000,
+      "valid_size": 0.2,
+      "save_pickle": true
+    },
+    "reference_results": "soil_xgboost_osm_merge_smote10000_optuna_outputs",
+    "historical_results_available": true
+  },
+  "xgb_base": {
+    "script": "train_xgboost_soil.py",
+    "input": "data/training/soil_relief_tlu.csv",
+    "options": {
+      "test_size": 0.25,
+      "random_state": 42,
+      "n_estimators": 500,
+      "learning_rate": 0.05,
+      "max_depth": 4
+    },
+    "reference_results": "soil_xgboost_outputs",
+    "historical_results_available": true
+  },
+  "xgb_soil_full_osm_merge_optuna": {
+    "script": "train_xgboost_merge_rare_optuna.py",
+    "input": "data/training/soil_full_osm.csv",
+    "options": {
+      "test_size": 0.25,
+      "random_state": 42,
+      "n_trials": 50,
+      "min_class_count": 30,
+      "distance_metric": "cosine",
+      "optimization_metric": "macro_f1",
+      "use_smote": false,
+      "valid_size": 0.2,
+      "save_pickle": true
+    },
+    "reference_results": "soil_xgboost_soil_full_osm_merge_optuna_outputs",
+    "historical_results_available": true
+  },
+  "xgb_soil_full_osm_merge_smote10000_optuna": {
+    "script": "train_xgboost_merge_rare_optuna.py",
+    "input": "data/training/soil_full_osm.csv",
+    "options": {
+      "test_size": 0.25,
+      "random_state": 42,
+      "n_trials": 50,
+      "min_class_count": 30,
+      "distance_metric": "cosine",
+      "optimization_metric": "macro_f1",
+      "use_smote": true,
+      "smote_target_count": 10000,
+      "valid_size": 0.2,
+      "save_pickle": true
+    },
+    "reference_results": "soil_xgboost_soil_full_osm_merge_smote10000_optuna_outputs",
+    "historical_results_available": true
+  },
+  "xgb_multiscale_merge_smote10000_optuna": {
+    "script": "train_xgboost_merge_rare_optuna.py",
+    "input": "data/training/soil_full_osm_multiscale.csv",
+    "options": {
+      "test_size": 0.25,
+      "random_state": 42,
+      "n_trials": 50,
+      "min_class_count": 30,
+      "distance_metric": "cosine",
+      "optimization_metric": "macro_f1",
+      "use_smote": true,
+      "valid_size": 0.2,
+      "save_pickle": true,
+      "smote_target_count": 10000
+    },
+    "reference_results": "soil_xgboost_multiscale_merge_smote10000_optuna_outputs",
+    "historical_results_available": false
+  }
+}

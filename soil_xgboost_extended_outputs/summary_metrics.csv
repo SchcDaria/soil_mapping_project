@@ -1,0 +1,4 @@
+﻿,model,description,features,accuracy,balanced_accuracy,macro_f1,weighted_f1
+2,model_3_relief_tlu_gran_mp,"Soil = f(relief, TLU, GRAN, MP)","height_1, slope_1, aspect_sin, aspect_cos, profile_1, tangential_1, TPI_1, TRI_1, roughness_1, TLU, GRAN, MP",0.6205882352941177,0.5557335261575627,0.5555001463262212,0.6175702806801859
+0,model_1_relief_tlu,"Soil = f(relief, TLU)","height_1, slope_1, aspect_sin, aspect_cos, profile_1, tangential_1, TPI_1, TRI_1, roughness_1, TLU",0.4323529411764706,0.37452442471913705,0.366183213572158,0.42023171257359465
+1,model_2_relief_only,Soil = f(relief),"height_1, slope_1, aspect_sin, aspect_cos, profile_1, tangential_1, TPI_1, TRI_1, roughness_1",0.4294117647058823,0.36918689571350277,0.36273296260961296,0.41865632818464815

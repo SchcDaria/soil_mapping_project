@@ -1,0 +1,76 @@
+{
+  "model": {
+    "name": "model_1_relief_tlu",
+    "description": "Soil = f(relief, TLU)",
+    "numeric_features": [
+      "height_1",
+      "slope_1",
+      "aspect_sin",
+      "aspect_cos",
+      "profile_1",
+      "tangential_1",
+      "TPI_1",
+      "TRI_1",
+      "roughness_1",
+      "flow_1",
+      "twi_1",
+      "dist_stream_1",
+      "osm_water_1",
+      "osm_wetland_1",
+      "osm_waterbody_1",
+      "osm_road_1",
+      "tpi_3x3_1",
+      "tpi_7x7_1",
+      "tpi_15x15_1",
+      "rough_3x3_1",
+      "rough_7x7_1",
+      "rough_15x15_1",
+      "relief_std_3x3_1",
+      "relief_std_7x7_1",
+      "relief_std_15x15_1"
+    ],
+    "categorical_features": [
+      "TLU"
+    ]
+  },
+  "target": "Soil",
+  "metrics": {
+    "accuracy": 0.7352941176470589,
+    "balanced_accuracy": 0.6738769898059112,
+    "macro_f1": 0.6642325386735631,
+    "weighted_f1": 0.7363791893390059
+  },
+  "optimization_metric": "macro_f1",
+  "best_validation_score": 0.7625193828381346,
+  "best_params": {
+    "n_estimators": 400,
+    "min_samples_split": 9,
+    "min_samples_leaf": 3,
+    "max_features": 0.75,
+    "bootstrap": false,
+    "criterion": "entropy",
+    "class_weight": "balanced_subsample"
+  },
+  "use_smote": false,
+  "resampling": null,
+  "train_class_counts_before": {
+    "п1д": 85,
+    "п1д огл": 146,
+    "п2д": 253,
+    "п2д огл": 124,
+    "п3д": 218,
+    "п3д огл": 121,
+    "пд пов огл": 61,
+    "т1п пов огл": 10
+  },
+  "train_class_counts_after": {
+    "п1д": 85,
+    "п1д огл": 146,
+    "п2д": 253,
+    "п2д огл": 124,
+    "п3д": 218,
+    "п3д огл": 121,
+    "пд пов огл": 61,
+    "т1п пов огл": 10
+  }
+}

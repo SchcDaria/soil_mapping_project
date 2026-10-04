@@ -1,0 +1,12 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.csv -text
+*.qgz binary
+*.png binary
+*.jpg binary
+*.pkl binary
+*.joblib binary
+*.tif binary
+*.gpkg binary
